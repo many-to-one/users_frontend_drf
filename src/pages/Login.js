@@ -1,10 +1,12 @@
 import React, {useContext} from 'react'
+import AuthContext from '../context/AuthContext'
 
 
-const LoginPage = () => {
+const Login = () => {
+    let {loginUser} = useContext(AuthContext)
     return (
         <div>
-            <form>
+            <form onSubmit={loginUser}>
                 <input type="text" name="username" placeholder="Enter Username" />
                 <input type="password" name="password" placeholder="Enter Password" />
                 <input type="submit"/>
@@ -13,4 +15,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage
+export default Login
